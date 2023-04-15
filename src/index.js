@@ -1,12 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Root from "./Root";
+import HoboMap from "./HoboMap";
+import RestaurantForm from "./RestaurantForm";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+  },
+  {
+    path: "HoboMap",
+    element: <HoboMap />,
+  },
+  {
+    path: "Form",
+    element: <RestaurantForm />
+  }
+]);
+
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-    
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

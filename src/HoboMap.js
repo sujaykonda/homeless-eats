@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
+import { collection, getDocs } from 'firebase/firestore';
+import FirebaseInfo from './FirebaseHandler';
 
-const Map = () => {
+const HoboMap = () => {
   const [map, setMap] = useState(null);
   const mapRef = useRef(null);
 
@@ -28,12 +30,15 @@ const Map = () => {
             center: center,
             zoom: 15,
           });
-          for(var i = 0; i < 10; i++) {
-            const marker = new window.google.maps.Marker({
-              position: { lat:center.lat, lng:(center.lng + i)},
-              map,
-            });
-        }
+
+          getDocs(collection(FirebaseInfo.db, "restaurantsInfo")).then((query) => {
+            query.docs.forEach((doc) => {
+              const marker = new window.google.maps.Marker({
+                position: { lat: doc.data()["coords"][0] , lng: doc.data()["coords"][1]},
+                map,
+              });
+            })
+        })
           setMap(map);
         });
       });
@@ -43,9 +48,10 @@ const Map = () => {
   return (
     <div
       ref={mapRef}
-      style={{ width: '100%', height: '500px' }}
+      style={{ width: '100vw', height: '100vh', overflow:'hidden' }}
+      
     />
   );
 };
 
-export default Map;
+export default HoboMap;

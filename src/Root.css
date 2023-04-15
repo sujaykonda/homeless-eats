@@ -1,0 +1,85 @@
+.outsideDiv{
+    background: rgb(0, 182, 82);
+    width: 100vw;
+    height: 100vh; 
+    text-align: center;
+    overflow: hidden;
+}
+
+img {
+    width: 5%;
+  }
+
+h1{
+    text-align: center;
+    background: rgb(255, 48, 48); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1000%;
+}
+
+h3{
+    text-align: center;
+    font-size: 200%;
+    background: rgb(255, 31, 31); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.firstInnerDiv {
+    flex-direction: row;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box1 {
+    flex: 1;
+    background-color: red;
+}
+
+.box2 {
+    flex: 2; 
+    background-color: blue;
+}
+
+
+/* CSS */
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 50px; /* Increased border-radius */
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 50px; /* Increased font-size */
+  padding: 500px; /* Increased padding */
+  line-height: 60px; /* Increased line-height */
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  margin:50px;
+  width:500px;
+  height:100px;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
