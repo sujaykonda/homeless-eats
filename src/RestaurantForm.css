@@ -1,0 +1,81 @@
+/* .outsideContainer{
+  background-color: rgb(83, 168, 207);
+
+  
+  display:flex;
+  
+}
+
+.blue {
+  background-color: rgb(83, 168, 207);
+}
+
+.insideContainer{
+  align-items: center;
+  background-color: white;
+  
+} */
+.outsideContainer {
+    position: relative; /* Set outer div to relative position */
+    width: 100vw; /* Set outer div width */
+    height: 100vh; /* Set outer div height */
+    background-color: #028dff; /* Set outer div background color */
+  }
+  
+  .space {
+    height:5%;
+  }
+  
+  .insideContainer{
+    border-radius: 25px;
+   
+  
+    padding:20px;
+    position: absolute; /* Set inner div to absolute position */
+    top: 50%; /* Set top position of inner div to 50% */
+    left: 50%; /* Set left position of inner div to 50% */
+    transform: translate(-50%, -50%); /* Center the inner div */
+    background-color: white; /* Set inner div background color */
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+    margin-top:0.2vh;
+    margin-bottom: 0.2vh;
+    height: 56%;
+    width:33%;
+    text-align: center;
+    
+    /* animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;  */
+  }
+  .text {
+    
+    padding-top: 2%;
+    width: 100%;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    
+  }
+  
+  .txtBox {
+    padding-top:1.5%;
+    font-size: 20%;
+  }
+  
+  button {
+    font-size: 40px; 
+    padding: 20px 35px;
+    background-color: #50cd86; 
+  }
+  
+  @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+  }
+  
