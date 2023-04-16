@@ -33,10 +33,23 @@ const HoboMap = () => {
 
           getDocs(collection(FirebaseInfo.db, "restaurantsInfo")).then((query) => {
             query.docs.forEach((doc) => {
+              
+              const infoWindow = new window.google.maps.InfoWindow({
+                content: "<p>Name: " + doc.data()["Name"] + "<br>Address: " + doc.data()["Address"] + "<br>Desc: " + doc.data()["Desc"]
+              });
+
               const marker = new window.google.maps.Marker({
+                // Add a click event listener to the marker
                 position: { lat: doc.data()["coords"][0] , lng: doc.data()["coords"][1]},
                 map,
               });
+
+              marker.addListener('click', () => {
+                // Open the info window on the map at the marker's position
+                infoWindow.open(map, marker);
+              });
+
+            
             })
         })
           setMap(map);
