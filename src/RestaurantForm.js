@@ -104,7 +104,7 @@ let navigate = useNavigate();
     setName('');
     setDescription('');
     setIsTextVisible(!isTextVisible);
-    navigate("/HoboMap")
+    navigate("/HomelessMap")
     
   }
   const Android12Switch = styled(Switch)(({ theme }) => ({
@@ -149,7 +149,7 @@ let navigate = useNavigate();
             <br />
             <br />
             <div className='textPlusBox'>
-              <p>Restaurant Name:</p>
+              <p>Donater Name:</p>
               <input type="text"  name="name" value={name} onChange={handleNameChange} className='txtBox' />
             </div>
            
